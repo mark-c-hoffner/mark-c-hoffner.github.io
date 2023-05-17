@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import './App.css';
 
+import Footer from "./Footer";
 import Home from "./Routes/Home";
 const About = lazy(() => import('./Routes/About'));
 
@@ -29,6 +30,7 @@ const App = () => {
                     </Routes>
                 </Suspense>
             </Router>
+            <Footer />
         </div >
     );
 };

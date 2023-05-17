@@ -1,0 +1,23 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 3dvh;
+}
+
+.footer a {
+  padding-left: 1dvw;
+  padding-right: 1dvw;
+}
+
+.footer a img {
+  position: relative;
+  bottom: 0;
+  transition: bottom .33s;
+}
+
+.footer a:hover img {
+  bottom: 1dvh;
+}
