@@ -1,9 +1,13 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import './App.css'
+import React, { Suspense, lazy } from "react";
+import { Helmet } from "react-helmet";
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import './App.css';
+
+import Home from "./Routes/Home";
+const About = lazy(() => import('./Routes/About'));
 
 /**
- * React Function Component 
+ * React Function Component displays navbar, footer, lazy loads content. 
  * @returns {JSX.Element} - A React Component instance.
  */
 const App = () => {
@@ -13,12 +17,20 @@ const App = () => {
                 <meta charset="utf-8" />
                 <title>Mark C Hoffner</title>
             </Helmet>
-            <div className="centered" data-testid="title">
-                <h1>Mark C Hoffner</h1>
-                <h2>Full Stack Developer, Azure Architect</h2>
-            </div>
+            <Router>
+                <nav>
+                    <NavLink end to="/" >Home</NavLink>
+                    <NavLink end to="/about" >About</NavLink>
+                </nav>
+                <Suspense fallback={<div></div>}>
+                    <Routes>
+                        <Route path="/" element={<Home />} />,
+                        <Route path="/about" element={<About />} />,
+                    </Routes>
+                </Suspense>
+            </Router>
         </div >
-    )
-}
+    );
+};
 
-export default App
+export default App;
