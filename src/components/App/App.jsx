@@ -1,17 +1,30 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import './App.css';
 
 import Footer from "./Footer";
-import Home from "./Routes/Home";
-const About = lazy(() => import('./Routes/About'));
+import routeData from "../../util/route-data";
 
 /**
  * React Function Component displays navbar, footer, lazy loads content. 
  * @returns {JSX.Element} - A React Component instance.
  */
 const App = () => {
+
+    const getNavLinks = () => {
+        return routeData.map((e, i) => {
+            return <NavLink key={i} end to={e.path} >{e.name}</NavLink>;
+        });
+    };
+
+    const getRoutes = () => {
+        return routeData.map((e, i) => {
+            return <Route key={i} path={e.path} element={e.element} />;
+        });
+
+    };
+
     return (
         <div className="App">
             <Helmet>
@@ -20,13 +33,11 @@ const App = () => {
             </Helmet>
             <Router>
                 <nav>
-                    <NavLink end to="/" >Home</NavLink>
-                    <NavLink end to="/about" >About</NavLink>
+                    {getNavLinks()}
                 </nav>
                 <Suspense fallback={<div></div>}>
                     <Routes>
-                        <Route path="/" element={<Home />} />,
-                        <Route path="/about" element={<About />} />,
+                        {getRoutes()}
                     </Routes>
                 </Suspense>
             </Router>

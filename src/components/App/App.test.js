@@ -1,21 +1,32 @@
 import React from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
 
-const homeMock = jest.fn()
-const aboutMock = jest.fn()
-const footerMock = jest.fn()
+const Home = jest.fn();
+const About = jest.fn();
+const footerMock = jest.fn();
+const routeDataMock = [
+    {
+        name: "Home",
+        path: "/",
+        element: <Home />
+    },
+    {
+        name: "About",
+        path: "/about",
+        element: <About />
+    }
+]
 
 describe('App', () => {
 
     let App;
 
     beforeEach(async () => {
-        jest.doMock('./Routes/Home', () => homeMock)
-        jest.doMock('./Routes/About', () => aboutMock)
+        jest.doMock('../../util/route-data.js', () => routeDataMock)
         jest.doMock('./Footer', () => footerMock)
 
-        homeMock.mockReturnValue(<>homeMock</>)
-        aboutMock.mockReturnValue(<>aboutMock</>)
+        Home.mockReturnValue(<>homeMock</>)
+        About.mockReturnValue(<>aboutMock</>)
         footerMock.mockReturnValue(<>footerMock</>)
 
         const obj = await import('./App.jsx');
@@ -35,18 +46,18 @@ describe('App', () => {
         await waitFor(() => expect(document.title).toBe('Mark C Hoffner'));
     })
 
-    it('displays Home', () => {
+    it('displays default route data', () => {
         const { getByText } = render(<App />);
         expect(getByText(/homeMock/)).toBeTruthy();
     })
 
-    it('routes to about', async () => {
+    it('routes to route data option', async () => {
         const { getByText } = render(<App />);
         fireEvent.click(getByText('About'));
         await waitFor(() => expect(getByText(/aboutMock/)).toBeTruthy());
     })
 
-    it('routes to Home', async () => {
+    it('routes back to default route data', async () => {
         const { getByText } = render(<App />);
         fireEvent.click(getByText('About'));
         await waitFor(() => expect(getByText(/aboutMock/)).toBeTruthy());
