@@ -27,6 +27,7 @@ nav a {
     display:flex;
     font-size: clamp(.5em, 2dvh, 1.5em);
     font-weight: bold;
+    transition: all .25s;
 }
 
 nav a:hover {
