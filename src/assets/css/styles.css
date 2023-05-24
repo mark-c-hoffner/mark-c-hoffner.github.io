@@ -22,7 +22,25 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(.5em, 3dvh, 3em);
+    font-size: clamp(.5em, 4dvh, 4em);
     margin: 0%;
-    padding-bottom: .1;
+    color: rgb(0, 150, 150);
+}
+
+h3 {
+    font-size: clamp(.5em, 3.5dvh, 3em);
+    margin: 0%;
+    color: rgb(0, 150, 150);
+}
+
+h4 {
+    margin: 0%;
+    font-size: clamp(.5em, 3dvh, 2.5em);
+}
+
+a {
+    color: rgb(213, 213, 213);
+    font-family: Arial, Helvetica, sans-serif, monospace;
+    font-weight: bold;
+    text-decoration: none;
 }
