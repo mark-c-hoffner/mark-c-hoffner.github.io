@@ -1,0 +1,98 @@
+
+:root {
+    --project-flex-transition-duration: 1s;
+    --project-font-size-transition-duration: .75s;
+  }
+
+.projectsContainer {
+    display: flex;
+    justify-content: center;
+    padding-right: 5vw;
+}
+
+.projectsList {
+    flex: 1;
+    max-width: fit-content;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectListTitle {
+    padding-bottom: 1dvh;
+    cursor: pointer;
+    transition: all .5s ease-in-out, font-size var(--project-font-size-transition-duration) ease-out;
+}
+
+.projectListTitle:hover {
+    transform: scale(1.2);
+    color: rgb(0, 150, 150);
+}
+
+.projectListTitle.chosen {
+    font-size: clamp(.5em, .1dvh, 2em);
+    color: rgb(125, 125, 125);
+}
+
+.projectListTitle.chosen:hover {
+    color: rgb(213, 213, 213);
+}
+
+.projectListTitle.active:hover {
+    transform: scale(1.2);
+    color: rgb(0, 150, 150);
+}
+
+.projectListTitle.active {
+    transform: scale(1.2);
+    cursor: default;
+    color: rgb(0, 150, 150);
+}
+
+.projectListTitleName {
+    width: fit-content;
+    border-bottom: 1px solid rgb(0, 150, 150);
+}
+
+.projectsSpacer {
+    transition: width var(--project-flex-transition-duration) ease-in-out;
+}
+
+.projectsSpacer.unchosen {
+    width: 0%;
+}
+
+.projectsSpacer.chosen {
+    width: 10%;
+}
+
+.projectInfo {
+    padding-top: 3dvh;
+    transition: all .5s ease-in-out, flex var(--project-flex-transition-duration) ease-in-out .1s, opacity 1s ease-in-out var(--project-font-size-transition-duration);
+}
+
+.projectInfo.unchosen {
+    flex: 0;
+    width: 0;
+    opacity: 0;
+}
+
+.projectInfo.chosen {
+    width: 1%;
+    flex: auto;
+    opacity: 100;
+}
+
+.projectInfoTitle {
+    color: rgb(0, 150, 150);
+}
+
+.projectBody {
+    padding-left: 20px;
+    border-left: 1px solid rgb(0, 150, 150);
+}
+
+.projectLink { 
+    margin-right: 5%;
+    border-bottom: 1px solid rgb(0, 150, 150);
+}
