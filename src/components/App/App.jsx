@@ -31,17 +31,19 @@ const App = () => {
                 <meta charset="utf-8" />
                 <title>Mark C Hoffner</title>
             </Helmet>
-            <Router>
-                <nav>
-                    {getNavLinks()}
-                </nav>
-                <Suspense fallback={<div></div>}>
-                    <Routes>
-                        {getRoutes()}
-                    </Routes>
-                </Suspense>
-            </Router>
-            <Footer />
+            <div className="main-container">
+                <Router>
+                    <nav>
+                        {getNavLinks()}
+                    </nav>
+                    <Suspense fallback={<div></div>}>
+                        <Routes>
+                            {getRoutes()}
+                        </Routes>
+                    </Suspense>
+                </Router>
+                <Footer />
+            </div>
         </div >
     );
 };
