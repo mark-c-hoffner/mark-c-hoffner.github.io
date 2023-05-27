@@ -15,6 +15,10 @@ body {
     padding: 0;
 }
 
+div {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 h1 {
     font-size: clamp(.5em, 9dvh, 7em);
     padding: .1%;
@@ -30,7 +34,6 @@ h2 {
 h3 {
     font-size: clamp(.5em, 3.5dvh, 3em);
     margin: 0%;
-    color: rgb(0, 150, 150);
 }
 
 h4 {
