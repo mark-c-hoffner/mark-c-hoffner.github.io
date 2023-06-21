@@ -56,6 +56,6 @@ a:hover {
 }
 
 p {
-    font-size: clamp(.5em, 2dvh, 2em);
+    font-size: clamp(1em, 2dvh, 2em);
     font-weight: normal;
 }
