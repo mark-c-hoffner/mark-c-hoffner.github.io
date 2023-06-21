@@ -13,7 +13,7 @@ export default {
         performance startup. I learned a host of web languages and frameworks, while focusing on building durable, 
         testable code. I leveraged Azure products to make the apps resilient and scalable, while limiting cloud costs. 
         Being a solo developer and managing a live product, I learned to balance and prioritize bug fixes and feature requests, 
-        while buidling up DevOps pipelines to automate away repetitive work and increase my rate of deliverables.`,
+        while building up DevOps pipelines to automate away repetitive work and increase my rate of deliverables.`,
         `I am now seeking new opportunities to further my knowledge while building awesome web products.`
     ]
 };
