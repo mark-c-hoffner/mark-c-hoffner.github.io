@@ -31,20 +31,20 @@ const App = () => {
                 <meta charset="utf-8" />
                 <title>Mark C Hoffner</title>
             </Helmet>
-            <div className="main-container">
-                <Router>
-                    <nav>
-                        {getNavLinks()}
-                    </nav>
-                    <Suspense fallback={<div></div>}>
+            <Router>
+                <nav>
+                    {getNavLinks()}
+                </nav>
+                <Suspense fallback={<div></div>}>
+                    <div className="main-container">
                         <Routes>
                             {getRoutes()}
                         </Routes>
-                    </Suspense>
-                </Router>
-                <Footer />
-            </div>
-        </div >
+                    </div >
+                </Suspense>
+            </Router>
+            <Footer />
+        </div>
     );
 };
 

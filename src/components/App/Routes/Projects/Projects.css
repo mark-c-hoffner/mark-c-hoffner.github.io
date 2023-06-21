@@ -67,7 +67,6 @@
 }
 
 .projectInfo {
-    padding-top: 3dvh;
     transition: all .5s ease-in-out, flex var(--project-flex-transition-duration) ease-in-out .1s, opacity 1s ease-in-out var(--project-font-size-transition-duration);
 }
 

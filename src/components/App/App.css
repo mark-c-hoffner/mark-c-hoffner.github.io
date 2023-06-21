@@ -1,6 +1,6 @@
 .main-container {
-    height: 88dvh;
-    max-height: 88dvh;
+    height: 82dvh;
+    max-height: 82dvh;
     max-width: 1280px;
     margin-right: auto;
     margin-left: auto;
@@ -17,13 +17,16 @@
 }
 
 nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-bottom: 3dvh;
 }
 
 nav a {
