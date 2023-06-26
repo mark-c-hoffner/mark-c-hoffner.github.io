@@ -1,8 +1,7 @@
-
 :root {
     --project-flex-transition-duration: 1s;
     --project-font-size-transition-duration: .75s;
-  }
+}
 
 .projectsContainer {
     display: flex;
@@ -67,18 +66,24 @@
 }
 
 .projectInfo {
-    transition: all .5s ease-in-out, flex var(--project-flex-transition-duration) ease-in-out .1s, opacity 1s ease-in-out var(--project-font-size-transition-duration);
+    overflow: hidden;
+    transition: all .5s ease-in-out,
+        flex var(--project-flex-transition-duration) ease-in-out .1s,
+        opacity 1s ease-in-out var(--project-font-size-transition-duration),
+        max-height 0s ease-in-out var(--project-flex-transition-duration);
 }
 
 .projectInfo.unchosen {
     flex: 0;
     width: 0;
+    max-height: 0;
     opacity: 0;
 }
 
 .projectInfo.chosen {
-    width: 1%;
     flex: auto;
+    width: 1%;
+    max-height: 80dvh;
     opacity: 100;
 }
 
@@ -91,7 +96,7 @@
     border-left: 1px solid rgb(0, 150, 150);
 }
 
-.projectLink { 
+.projectLink {
     margin-right: 5%;
     border-bottom: 1px solid rgb(0, 150, 150);
 }
