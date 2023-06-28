@@ -37,6 +37,18 @@ const Projects = () => {
         };
     };
 
+    const getProjectPoints = (e) => {
+        if (e.details != null) {
+            return (
+                <ul>
+                    {e.details.map((f, i) => {
+                        return <li key={i}>{f}</li>;
+                    })}
+                </ul>
+            );
+        };
+    };
+
     const getProjectLinks = (e) => {
         if (e.links != null) {
             return e.links.map((f, i) => {
@@ -55,6 +67,7 @@ const Projects = () => {
                 <h3 className='projectInfoTitle'>{e.name}</h3>
                 <div className='projectBody'>
                     {getProjectDescription(e)}
+                    {getProjectPoints(e)}
                     <div className={"projectLinkContainer"}>
                         {getProjectLinks(e)}
                     </div>

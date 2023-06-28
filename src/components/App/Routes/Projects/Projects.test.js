@@ -15,8 +15,12 @@ const projectDataMock = [
             { title: "mock1-link2", url: "mock1-link2-url" },
         ],
         description: [
-            "mock 1 text 1",
-            "mock 1 text 2"
+            "mock 1 description 1",
+            "mock 1 description 2"
+        ],
+        details: [
+            "mock 1 detail 1",
+            "mock 1 detail 2"
         ]
     },
     {
@@ -26,8 +30,12 @@ const projectDataMock = [
             { title: "mock2-link2", url: "mock2-link2-url" },
         ],
         description: [
-            "mock 2 text 1",
-            "mock 2 text 2"
+            "mock 2 description 1",
+            "mock 2 description 2"
+        ],
+        details: [
+            "mock 2 detail 1",
+            "mock 2 detail 2"
         ]
     }
 ];
@@ -98,14 +106,24 @@ describe('Projects', () => {
         expect(getByTestId('projectsSpacer').className).toBe('projectsSpacer chosen');
     });
 
-    it('renders project text on click', () => {
+    it('renders project description on click', () => {
         const { getByText } = render(<Projects />);
         fireEvent.click(getByText(/mock project 1/));
-        expect(getByText(/mock 1 text 1/)).toBeTruthy();
-        expect(getByText(/mock 1 text 2/)).toBeTruthy();
+        expect(getByText(/mock 1 description 1/)).toBeTruthy();
+        expect(getByText(/mock 1 description 2/)).toBeTruthy();
         fireEvent.click(getByText(/mock project 2/));
-        expect(getByText(/mock 2 text 1/)).toBeTruthy();
-        expect(getByText(/mock 2 text 2/)).toBeTruthy();
+        expect(getByText(/mock 2 description 1/)).toBeTruthy();
+        expect(getByText(/mock 2 description 2/)).toBeTruthy();
+    });
+
+    it('renders project details on click', () => {
+        const { getByText } = render(<Projects />);
+        fireEvent.click(getByText(/mock project 1/));
+        expect(getByText(/mock 1 detail 1/)).toBeTruthy();
+        expect(getByText(/mock 1 detail 2/)).toBeTruthy();
+        fireEvent.click(getByText(/mock project 2/));
+        expect(getByText(/mock 2 detail 1/)).toBeTruthy();
+        expect(getByText(/mock 2 detail 2/)).toBeTruthy();
     });
 
     it('renders project links on click', () => {
