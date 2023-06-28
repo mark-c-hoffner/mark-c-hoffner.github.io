@@ -58,7 +58,11 @@ const Projects = () => {
                     </a>
                 );
             });
-        };
+        } else {
+            return (
+                <div className='projectBottom' data-testid='projectBottom'/>
+            )
+        }
     };
 
     const getProjectInfoDisplay = (e) => {

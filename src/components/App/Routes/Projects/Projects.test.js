@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 const useMeasureMock = jest.fn();
 const heightRefMock = jest.fn();
@@ -36,6 +37,17 @@ const projectDataMock = [
         details: [
             "mock 2 detail 1",
             "mock 2 detail 2"
+        ]
+    },
+    {
+        name: "mock project 3",
+        description: [
+            "mock 3 description 1",
+            "mock 3 description 2"
+        ],
+        details: [
+            "mock 3 detail 1",
+            "mock 3 detail 2"
         ]
     }
 ];
@@ -127,7 +139,7 @@ describe('Projects', () => {
     });
 
     it('renders project links on click', () => {
-        const { getByText, getAllByRole } = render(<Projects />);
+        const { getByText, getAllByRole, queryByTestId } = render(<Projects />);
         fireEvent.click(getByText(/mock project 1/));
         expect(getAllByRole('link')[0].getAttribute('href')).toBe('mock1-link1-url');
         expect(getAllByRole('link')[0].getAttribute('target')).toBe('_blank');
@@ -135,6 +147,7 @@ describe('Projects', () => {
         expect(getAllByRole('link')[1].getAttribute('href')).toBe('mock1-link2-url');
         expect(getAllByRole('link')[1].getAttribute('target')).toBe('_blank');
         expect(getAllByRole('link')[1].getAttribute('rel')).toBe('noopener noreferrer');
+        expect(queryByTestId('projectBottom')).not.toBeInTheDocument();
         fireEvent.click(getByText(/mock project 2/));
         expect(getAllByRole('link')[0].getAttribute('href')).toBe('mock2-link1-url');
         expect(getAllByRole('link')[0].getAttribute('target')).toBe('_blank');
@@ -142,6 +155,13 @@ describe('Projects', () => {
         expect(getAllByRole('link')[1].getAttribute('href')).toBe('mock2-link2-url');
         expect(getAllByRole('link')[1].getAttribute('target')).toBe('_blank');
         expect(getAllByRole('link')[1].getAttribute('rel')).toBe('noopener noreferrer');
+        expect(queryByTestId('projectBottom')).not.toBeInTheDocument();
+    });
+
+    it('renders project bottom if there are no links', () => {
+        const { getByText, getByTestId } = render(<Projects />);
+        fireEvent.click(getByText(/mock project 3/));
+        expect(getByTestId('projectBottom')).toBeTruthy();
     });
 
     it('updates css variables on width change', () => {
