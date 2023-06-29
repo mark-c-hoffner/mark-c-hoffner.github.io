@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * React Function Component displays home page.
+ * React Function Component displays "Home" page.
  * @returns {JSX.Element} - A React Component instance.
  */
 const Home = () => {

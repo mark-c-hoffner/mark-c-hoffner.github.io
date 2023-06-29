@@ -7,7 +7,7 @@ import Video from '../../Video';
 import projectData from '../../../../util/project-data';
 
 /**
- * React Function Component displays project data.
+ * React Function Component displays "Projects" page.
  * @returns {JSX.Element} - A React Component instance.
  */
 const Projects = () => {

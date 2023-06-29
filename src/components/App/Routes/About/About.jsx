@@ -4,7 +4,7 @@ import "./About.css";
 import aboutData from '../../../../util/about-data';
 
 /**
- * React Function Component displays about page.
+ * React Function Component displays 'About" page.
  * @returns {JSX.Element} - A React Component instance.
  */
 const About = () => {
