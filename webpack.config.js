@@ -39,6 +39,10 @@ const common = (version) => ({
                     { loader: 'url-loader' }
                 ]
             },
+            {
+                test: /\.mp4$/,
+                use: 'file-loader?name=videos/[name].[ext]',
+            },
         ]
     },
     plugins: [
@@ -83,11 +87,7 @@ const dev = () => ({
                     'style-loader',
                     'css-loader'
                 ]
-            },
-            {
-                test: /\.mp4$/,
-                use: 'file-loader?name=videos/[name].[ext]',
-            },
+            }
         ]
     },
     plugins: [
