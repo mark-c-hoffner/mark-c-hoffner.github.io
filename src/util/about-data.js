@@ -1,4 +1,4 @@
-import HeadshotSource from "../assets/images/headshot.svg"
+import HeadshotSource from "../assets/images/headshot.png"
 
 export default {
     image: {
