@@ -1,11 +1,11 @@
 {
   "name": "portfolio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mark-c-hoffner/portfolio.git"
+    "url": "git+https://github.com/mark-c-hoffner/mark-c-hoffner.github.io.git"
   },
   "scripts": {
     "start": "webpack-dev-server --open --env dev --name ${npm_package_version}",
