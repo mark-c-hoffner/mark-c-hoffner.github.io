@@ -81,6 +81,7 @@
 }
 
 .projectInfo.chosen {
+    overflow-y: auto;
     flex: auto;
     width: 1%;
     max-height: 80dvh;
