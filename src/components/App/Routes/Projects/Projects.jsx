@@ -3,6 +3,7 @@ import useMeasure from 'react-use-measure'
 import { ResizeObserver } from '@juggle/resize-observer'
 import "./Projects.css";
 
+import Video from '../../Video';
 import projectData from '../../../../util/project-data';
 
 /**
@@ -49,6 +50,16 @@ const Projects = () => {
         };
     };
 
+    const getProjectMedia = (e) => {
+        if (e.media != null) {
+            return e.media.map((f, i) => {
+                if (f.type === 'video') {
+                    return <Video key={i} src={f.src} />;
+                }
+            });
+        };
+    };
+
     const getProjectLinks = (e) => {
         if (e.links != null) {
             return e.links.map((f, i) => {
@@ -60,7 +71,7 @@ const Projects = () => {
             });
         } else {
             return (
-                <div className='projectBottom' data-testid='projectBottom'/>
+                <div className='projectBottom' data-testid='projectBottom' />
             )
         }
     };
@@ -72,6 +83,7 @@ const Projects = () => {
                 <div className='projectBody'>
                     {getProjectDescription(e)}
                     {getProjectPoints(e)}
+                    {getProjectMedia(e)}
                     <div className={"projectLinkContainer"}>
                         {getProjectLinks(e)}
                     </div>

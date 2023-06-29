@@ -1,0 +1,7 @@
+ .video {
+     aspect-ratio: 1080 / 2088;
+     width: 30dvw;
+     height: 40dvh;
+     max-height: 544px;
+     margin-bottom: 1em;
+ }

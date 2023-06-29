@@ -1,7 +1,8 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
+const videoMock = jest.fn()
 const useMeasureMock = jest.fn();
 const heightRefMock = jest.fn();
 const boundsMock = {};
@@ -49,6 +50,21 @@ const projectDataMock = [
             "mock 3 detail 1",
             "mock 3 detail 2"
         ]
+    },
+    {
+        name: "mock project 4",
+        media: [
+            { type: "video", src: "mockVideoSource" }
+        ],
+    },
+    {
+        name: "mock project 5",
+        description: [
+            "mock 5 description 1",
+        ],
+        media: [
+            { type: "unknown", src: "mockUnknownSource" }
+        ],
     }
 ];
 
@@ -57,6 +73,9 @@ describe('Projects', () => {
     let Projects;
 
     beforeEach(async () => {
+        jest.doMock('../../Video', () => videoMock)
+        videoMock.mockReturnValue(<>videoMock</>)
+
         jest.doMock('react-use-measure', () => useMeasureMock);
         jest.doMock('@juggle/resize-observer', () => polyFillMock);
         useMeasureMock.mockReturnValue([heightRefMock, boundsMock]);
@@ -136,6 +155,19 @@ describe('Projects', () => {
         fireEvent.click(getByText(/mock project 2/));
         expect(getByText(/mock 2 detail 1/)).toBeTruthy();
         expect(getByText(/mock 2 detail 2/)).toBeTruthy();
+    });
+
+    it('renders video media', async () => {
+        const { getByText } = render(<Projects />);
+        fireEvent.click(getByText(/mock project 4/));
+        await waitFor(() => expect(getByText(/videoMock/)).toBeTruthy());
+        expect(videoMock.mock.calls[0][0].src).toBe('mockVideoSource');
+    });
+
+    it('ignores unknown media types', async () => {
+        const { getByText } = render(<Projects />);
+        fireEvent.click(getByText(/mock project 5/));
+        expect(getByText(/mock 5 description 1/)).toBeTruthy();
     });
 
     it('renders project links on click', () => {

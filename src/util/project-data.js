@@ -1,3 +1,5 @@
+import gameClip from "../assets/video/untitled_survival_game-clip.mp4";
+
 export default [
     {
         name: `smart-bot`,
@@ -6,12 +8,12 @@ export default [
             { title: `GitHub`, url: `https://github.com/mark-c-hoffner/smart-bot` },
         ],
         description: [
-            `React Web App built as a code sample.`, 
+            `React Web App built as a code sample.`,
             `Bot eyes and mouth animate in response to animated text display. 
             Prompts user to correct or agree with bot's assertions about colors. Bot stores and recalls corrections.`,
         ],
         details: [
-            `State and event management using hooks`, 
+            `State and event management using hooks`,
             `Complete unit test coverage written in Jest`,
             `App created with Javascript, React, CSS and Webpack`,
         ]
@@ -19,15 +21,15 @@ export default [
     {
         name: `Ride Commander`,
         description: [
-            `Cloud Native Web App suite built for The Ride NYC.`, 
-            `Automates communication, gathers hardware telemetry and enables remote control for a fleet of buses, mobile street performers and office management staff.`, 
+            `Cloud Native Web App suite built for The Ride NYC.`,
+            `Automates communication, gathers hardware telemetry and enables remote control for a fleet of buses, mobile street performers and office management staff.`,
         ],
         details: [
             `Web Apps hosted on Azure Static Web Apps for low cost and ease of deployment`,
-            `Azure Functions on Consumption plan for low cost API interactions`, 
+            `Azure Functions on Consumption plan for low cost API interactions`,
             `Real time communication and updates delivered via Azure Web PubSub`,
             `Azure Table storage provides fast and reliable access to time series data`,
-            `Identity services managed in Azure Active Directory`, 
+            `Identity services managed in Azure Active Directory`,
             `Electron App for onboard technicians gathers, displays and sends system telemetry. Provides show control, chat and direct message`,
             `Management App displays bus and performance data. Provides chat and direct message. Role based access to historical performance data and user creation`,
             `Publicly accessible endpoint displays performance updates`,
@@ -37,7 +39,7 @@ export default [
     {
         name: `Ride VR`,
         description: [
-            `Suite of applications built for The Ride NYC.`, 
+            `Suite of applications built for The Ride NYC.`,
             `Displays, controls and manages 360 video for a live audience environment.`,
         ],
         details: [
@@ -56,6 +58,9 @@ export default [
         ],
         details: [
             `Created in Unity with C#`
+        ],
+        media: [
+            { type: "video", src: gameClip }
         ]
     },
 ];
