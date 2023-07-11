@@ -15,6 +15,5 @@ export default {
         Being a solo developer and managing a live product, I learned to balance and prioritize bug fixes and feature requests, 
         while building up DevOps pipelines to automate away repetitive work and increase my rate of deliverables.`,
         `I am now seeking new opportunities to further my knowledge while building awesome web products.`
-    ],
-    emailAddress: "mark.c.hoffner@gmail.com"
+    ]
 };
