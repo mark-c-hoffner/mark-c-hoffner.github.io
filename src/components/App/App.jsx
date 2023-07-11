@@ -34,7 +34,7 @@ const App = () => {
                 <meta charset="utf-8" />
                 <title>Mark C Hoffner</title>
             </Helmet>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <nav>
                     <div className="leftNav">
                         <a href={`mailto: ${aboutData.emailAddress}`}>
