@@ -15,6 +15,10 @@ const routeDataMock = [
         name: "About",
         path: "/about",
         element: <About />
+    },
+    {
+        path: "*",
+        element: <></>
     }
 ]
 

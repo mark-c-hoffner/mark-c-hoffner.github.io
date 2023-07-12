@@ -17,7 +17,9 @@ const App = () => {
 
     const getNavLinks = () => {
         return routeData.map((e, i) => {
-            return <NavLink key={i} end to={e.path} >{e.name}</NavLink>;
+            if (e.name) {
+                return <NavLink key={i} end to={e.path} >{e.name}</NavLink>;
+            };
         });
     };
 
