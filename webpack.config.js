@@ -56,6 +56,12 @@ const common = (version) => ({
             favicon: "./public/favicon.ico",
             chunks: ['main'],
         }),
+        new HtmlWebpackPlugin({
+            template: "./public/404.html",
+            filename: "./404.html",
+            favicon: "./public/favicon.ico",
+            chunks: ['main'],
+        }),
         new CleanWebpackPlugin()
     ]
 })
