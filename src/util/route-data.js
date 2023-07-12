@@ -7,7 +7,7 @@ const Projects = lazy(() => import('../components/App/Routes/Projects'));
 export default [
     {
         name: "Home",
-        path: "/",
+        path: "*",
         element: <Home />
     },
     {
