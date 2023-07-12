@@ -5,6 +5,9 @@ import './App.css';
 
 import Footer from "./Footer";
 import routeData from "../../util/route-data";
+import MailIcon from "./MailIcon";
+
+import aboutData from "../../util/about-data";
 
 /**
  * React Function Component displays navbar, footer, lazy loads content. 
@@ -31,9 +34,19 @@ const App = () => {
                 <meta charset="utf-8" />
                 <title>Mark C Hoffner</title>
             </Helmet>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <nav>
-                    {getNavLinks()}
+                    <div className="leftNav">
+                        <a href={`mailto: ${aboutData.emailAddress}`}>
+                            <MailIcon />
+                        </a>
+                        <div className="emailNameWrapper">
+                            <div className="emailName">{aboutData.emailAddress}</div>
+                        </div>
+                    </div>
+                    <div className="rightNav">
+                        {getNavLinks()}
+                    </div>
                 </nav>
                 <Suspense fallback={<div></div>}>
                     <div className="main-container">

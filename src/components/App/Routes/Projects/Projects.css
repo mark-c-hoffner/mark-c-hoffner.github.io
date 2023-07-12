@@ -97,8 +97,19 @@
 }
 
 .projectLink {
+    color: rgb(125, 125, 125);
+    font-family: Arial, Helvetica, sans-serif, monospace;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: clamp(.5em, 2dvh, 2em);
+    transition: all .25s;
     margin-right: 5%;
     border-bottom: 1px solid rgb(0, 150, 150);
+}
+
+.projectLink:hover {
+    transform: scale(1.2);
+    color: rgb(213, 213, 213);
 }
 
 .projectBottom {
