@@ -42,6 +42,8 @@ nav {
 .rightNav a {
     all: unset;
     padding: 2%;
+    padding-left: 1dvw;
+    padding-right: 1dvw;
     text-decoration: none;
     color: rgb(125, 125, 125);
     min-width: 10%;
