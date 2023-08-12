@@ -57,6 +57,7 @@ nav {
 }
 
 .rightNav a:hover {
+    cursor: pointer;
     transform: scale(1.2);
     color: rgb(213, 213, 213);
 }
